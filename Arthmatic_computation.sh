@@ -8,3 +8,6 @@ read -p "Enter third input: " c;
 #COMPUTE ARITHMETIC OPERATION
 z=$(( $a + $(($b * $c))))
 echo "Result:" $z
+
+z1=$(( $(($a * $b)) + $c ))
+echo "Result:" $z1
