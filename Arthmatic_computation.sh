@@ -11,3 +11,6 @@ echo "Result:" $z
 
 z1=$(( $(($a * $b)) + $c ))
 echo "Result:" $z1
+
+z3=$(( $c + $(($a / $b))))
+echo "Result:" $z3
