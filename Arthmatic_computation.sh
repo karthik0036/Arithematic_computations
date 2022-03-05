@@ -12,8 +12,17 @@ echo "Result:" $z
 z1=$(( $(($a * $b)) + $c ))
 echo "Result:" $z1
 
-z3=$(( $c + $(($a / $b))))
+z2=$(( $c + $(($a / $b))))
+echo "Result:" $z2
+
+z3=$(( $($a % $b) + $c ))
 echo "Result:" $z3
 
-z4=$(( $($a % $b) + $c ))
-echo "Result:" $z4
+#STORING IN DICTIONARY
+
+declare -A arthmaticOperation
+
+arthmaticOperation[0]=$z
+arthmaticOperation[1]=$z1
+arthmaticOperation[2]=$z2
+arthmaticOperation[3]=$z3
