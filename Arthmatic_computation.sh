@@ -39,3 +39,23 @@ done
 #TO PRINT
 echo "${array[@]}"
 
+#TO FUNCTION SORTING RESULTS IN DECENDING ORDER
+function descendingOrderSort()
+{
+	for((i=0; i<${#array[@]};i++))
+	do
+		for((iOne=0;iOne<${#array[@]}-1;iOne ++ ))
+		do
+			if [ $(echo "${array[iOne+1]} -gt ${array[iOne]}" | sort -r ) ]
+			then
+				temp=${array[iOne]}
+				array[iOne]=${array[iOne+1]}
+				array[iOne+1]=$temp
+			fi
+		done
+	done
+	echo "To data descending order"${array[@]}
+}
+
+#TO FUNCTION CALL FOR SORTING IN DECENDING ORDER
+descendingOrderSort ${array[@]}
