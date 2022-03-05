@@ -59,3 +59,26 @@ function descendingOrderSort()
 
 #TO FUNCTION CALL FOR SORTING IN DECENDING ORDER
 descendingOrderSort ${array[@]}
+
+
+
+#TO FUNCTION SORTING RESULTS IN ASCENDING ORDER
+function ascendingOrderSort()
+{
+   for(( index=0; index<${#array[@]}; index ++ ))
+   do
+      for(( indexOne=0; indexOne<${#array[@]}-1; indexOne ++ ))
+      do
+         if (( $(echo "${array[indexOne+1]} < ${array[indexOne]}" | sort ) ))
+         then
+            temp=${array[indexOne]}
+            array[indexOne]=${array[indexOne+1]}
+            array[indexOne+1]=$temp
+         fi
+      done
+   done
+   echo "To data ascending order:"${array[@]}
+}
+
+#TO FUNCTION CALL FOR SORTING IN ASCENDING ORDER
+ascendingOrderSort ${array[@]}
